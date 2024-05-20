@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap'); /*LETRA*/
+
+* {
+    box-sizing: border-box; /* Modelo de caja para todos los elementos */
+}
+
+/* PAGINA */
+
+body {
+    font-family: 'Faustina', sans-serif; /* AGREGO */
+    display: flex; /* CAJA FLEXIBLE: FLEXBOX */
+    align-items: center; /* ALINEA VERTICALMENTE EL FLEXBOX */
+    justify-content: center; /* ALINEA HORIZONTALEMENTE EL FLEXBOX */
+    height: 100vh; /* PORCENTAJE DE ALTURA DEL VIEWPOINT */
+    overflow: hidden; /* OCULTA LO QUE SE PASA DE LIMITES */
+    margin: 0; /* MARGEN 0, TOMO EL DEL CONTENEDOR */
+    background-color: whitesmoke; /* COLOR FONDO */
+}
+
+/* LUGAR FOTO */
+
+.container {
+    display: flex; /* CAJA FLEXIBLE: FLEXBOX */
+    width: 100vw; /* TAMAÑO CONTAINER */
+}
+
+/* FOTO */
+
+.panel {
+    background-size: cover; /* FOTO CUBRE TOTALMENTE EL ESPACIO */
+    background-position: center; /* FOTO CENTRADA */
+    background-repeat: no-repeat; /* SOLO UNA VEZ SE MUESTRA */
+    height: 90vh; /* ALTURA VIEWPORT */
+    border-radius: 40px; /* EFECTO ESQUINAS REDONDEADAS */
+    color: #fff; /* COLOR DE TEXTO DENTRO */
+    cursor: pointer; /* MOUSE PUNTERO */
+    flex: 0.5; /* OCUPACION EN EL CONTENEDOR CUANDO SE CIERRA*/
+    margin: 10px; /*MARGENES EN EL CONTENEDOR*/
+    position: relative;
+    -webkit-transition: all 1000ms ease-in; /* TRANSICION ANIMADA PANEL */
+}
+
+.panel h3 {
+    font-size: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+/* PANEL ACTIVO */
+.panel.active {
+    flex: 5; /*SE AGRANDA*/
+    color: white;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
